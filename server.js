@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const authRoutes = require("./routes/auth");
+const authRoutes = require("./auth/routes/auth");
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -20,12 +20,25 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// TODO: app.use(
+//   cors({
+//     origin: 'http://localhost:3001',
+//     methods: 'GET,POST,PUT,DELETE',
+//     allowedHeaders: 'Content-Type,Authorization',
+//   }),
+// );
+
+// TODO: app.get('/videos', (req, res) => {
+//   res.json(videos);
+// });
+
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "NettStudios API" });
+  res.status(200).json({ message: "NettStudios API 🚀" });
 });
 
 const PORT = process.env.PORT || 3000;
