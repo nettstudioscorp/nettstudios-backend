@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const authRoutes = require("./auth/routes/auth");
+const authRoutes = require("./src/auth/routes/auth");
 
 mongoose.connect(process.env.MONGODB_URI);
 
