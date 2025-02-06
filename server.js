@@ -15,19 +15,14 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: "https://dev-nettstudios-frontend.vercel.app",
+    // origin: "https://nettstudios-frontend-staging.vercel.app/",
+    // origin: "http://www.nettstudios.com.br",
+    // origin: "http://localhost:3001",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
   })
 );
-
-// TODO: app.use(
-//   cors({
-//     origin: 'http://localhost:3001',
-//     methods: 'GET,POST,PUT,DELETE',
-//     allowedHeaders: 'Content-Type,Authorization',
-//   }),
-// );
 
 // TODO: app.get('/videos', (req, res) => {
 //   res.json(videos);
