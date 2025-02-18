@@ -47,6 +47,20 @@ const upload = multer({
   },
 });
 
+const validatePassword = (password) => {
+  const invalidChars = /[<>\/\\|]/;
+  if (invalidChars.test(password)) {
+    return "A senha não deve conter caracteres como <, >, /, |, \\.";
+  }
+
+  const regex = /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$/;
+  if (!regex.test(password)) {
+    return "A senha deve ter mais de 8 caracteres com pelo menos uma letra maiúscula, uma minúscula, um número e um caractere especial (por exemplo, !, @, #, $).";
+  }
+
+  return "";
+};
+
 router.post("/signup", async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -57,12 +71,18 @@ router.post("/signup", async (req, res) => {
         .json({ message: "Todos os campos são obrigatórios" });
     }
 
+    const passwordError = validatePassword(password);
+    if (passwordError) {
+      return res.status(400).json({ message: passwordError });
+    }
+
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: "Email já registrado" });
     }
 
-    const user = new User({ name, email, password });
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = new User({ name, email, password: hashedPassword });
     await user.save();
 
     res.status(201).json({ message: "Usuário criado com sucesso", user });
@@ -87,11 +107,12 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Usuário não encontrado" });
     }
 
-    if (user.password !== password) {
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
       return res.status(400).json({ message: "Senha incorreta" });
     }
 
-    const token = jwt.sign({ id: user._id }, "sua_chave_secreta", {
+    const token = jwt.sign({ id: user._id }, jwtSecret, {
       expiresIn: "1h",
     });
 
@@ -104,13 +125,25 @@ router.post("/login", async (req, res) => {
 
 router.put("/update", authenticate, async (req, res) => {
   try {
-    const { email, name, profilePicture } = req.body;
+    const { email, name, password, profilePicture } = req.body;
     const userId = req.user.id;
 
     const updatedData = {};
     if (name) updatedData.name = name;
-    if (email) updatedData.email = email;
     if (profilePicture) updatedData.profilePicture = profilePicture;
+
+    if (email) {
+      const existingUser = await User.findOne({ email });
+      if (existingUser && existingUser._id.toString() !== userId) {
+        return res.status(400).json({ message: "E-mail já está em uso." });
+      }
+      updatedData.email = email;
+    }
+
+    if (password) {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      updatedData.password = hashedPassword;
+    }
 
     const updatedUser = await User.findByIdAndUpdate(userId, updatedData, {
       new: true,
