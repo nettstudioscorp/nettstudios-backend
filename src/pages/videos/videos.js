@@ -331,6 +331,81 @@ const videos = [
     },
     isExclusive: false,
   },
+
+  {
+    id: "23",
+    videoId: "612cjAypXxw",
+    snippet: {
+      title: "Assassin's Creed Valhalla - Episódio 4",
+      thumbnails: {
+        medium: {
+          url: "https://images5.alphacoders.com/108/1087059.jpg",
+        },
+      },
+      description: "18 de fev. de 2025",
+    },
+    isExclusive: false,
+  },
+
+  {
+    id: "24",
+    videoId: "g6E0jshwsac",
+    snippet: {
+      title: "Assassin's Creed Valhalla - Episódio 4",
+      thumbnails: {
+        medium: {
+          url: "https://images5.alphacoders.com/108/1087059.jpg",
+        },
+      },
+      description: "18 de fev. de 2025",
+    },
+    isExclusive: false,
+  },
+
+  {
+    id: "25",
+    videoId: "pIKFHyxL8Jw",
+    snippet: {
+      title: "Far Cry Primal - Episódio 17",
+      thumbnails: {
+        medium: {
+          url: "https://wallpapercave.com/wp/wp1896894.jpg",
+        },
+      },
+      description: "18 de fev. de 2025",
+    },
+    isExclusive: false,
+  },
+
+  {
+    id: "26",
+    videoId: "vxwt3n7VBfU",
+    snippet: {
+      title: "Assassin's Creed Valhalla - Episódio 2",
+      thumbnails: {
+        medium: {
+          url: "https://images5.alphacoders.com/108/1087059.jpg",
+        },
+      },
+      description: "18 de fev. de 2025",
+    },
+    isExclusive: false,
+  },
+
+  {
+    id: "27",
+    videoId: "qAlSiJK18D4",
+    snippet: {
+      title: "Far Cry Primal - Episódio 15",
+      thumbnails: {
+        medium: {
+          url: "https://wallpapercave.com/wp/wp1896894.jpg",
+        },
+      },
+      description: "18 de fev. de 2025",
+    },
+    isExclusive: false,
+  },
 ];
 
 router.get("/videos", (req, res) => {

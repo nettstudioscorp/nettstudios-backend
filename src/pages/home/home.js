@@ -193,6 +193,36 @@ const videosSections = [
           "https://c4.wallpaperflare.com/wallpaper/732/871/827/f-e-a-r-2-f-e-a-r-2-project-origin-video-games-f-e-a-r-wallpaper-preview.jpg",
         videoId: "_QQ5gQ1Z7EY",
       },
+
+      {
+        name: "Assassin's Creed Valhalla - Episódio 4",
+        image: "https://images5.alphacoders.com/108/1087059.jpg",
+        videoId: "612cjAypXxw",
+      },
+
+      {
+        name: "Assassin's Creed Valhalla - Episódio 3",
+        image: "https://images5.alphacoders.com/108/1087059.jpg",
+        videoId: "g6E0jshwsac",
+      },
+
+      {
+        name: "Far Cry Primal - Episódio 17",
+        image: "https://wallpapercave.com/wp/wp1896894.jpg",
+        videoId: "pIKFHyxL8Jw",
+      },
+
+      {
+        name: "Assassin's Creed Valhalla - Episódio 2",
+        image: "https://images5.alphacoders.com/108/1087059.jpg",
+        videoId: "vxwt3n7VBfU",
+      },
+
+      {
+        name: "Far Cry Primal - Episódio 15",
+        image: "https://wallpapercave.com/wp/wp1896894.jpg",
+        videoId: "qAlSiJK18D4",
+      },
     ],
   },
 ];
