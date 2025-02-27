@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const authRoutes = require("./src/auth/routes/auth");
 const homeRoutes = require("./src/pages/home/home");
-// const homePlaylistCategoriesRoutes = require("./src/pages/home/HomePlaylistCategories");
+
 const playlistRoutes = require("./src/pages/playlists/playlist");
 const videoRoutes = require("./src/pages/videos/videos");
 const liveRoutes = require("./src/pages/live/live");
@@ -39,7 +39,7 @@ app.use(
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/home", homeRoutes);
-// app.use("/api/categories/playlists", homePlaylistCategoriesRoutes);
+
 app.use("/api/playlists", playlistRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/live", liveRoutes);
