@@ -16,19 +16,19 @@ const playlistsEmLançamento = [
       "https://wallpapers.com/images/hd/assassin-s-creed-valhalla-varin-s-axe-k7diwwziiqd0t1uq.jpg",
   },
 
-  {
-    id: "Far Cry Primal",
-    name: "Far Cry Primal",
-    thumbnail:
-      "https://c4.wallpaperflare.com/wallpaper/751/507/780/far-cry-primal-video-games-artwork-wallpaper-preview.jpg",
-  },
+  // {
+  //   id: "Far Cry Primal",
+  //   name: "Far Cry Primal",
+  //   thumbnail:
+  //     "https://c4.wallpaperflare.com/wallpaper/751/507/780/far-cry-primal-video-games-artwork-wallpaper-preview.jpg",
+  // },
 
-  {
-    id: "Dead Rising 3",
-    name: "Dead Rising 3",
-    thumbnail:
-      "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/265550/ac426042dfbb835c81e8891089dc4f86b355a4fa.jpg",
-  },
+  // {
+  //   id: "Dead Rising 3",
+  //   name: "Dead Rising 3",
+  //   thumbnail:
+  //     "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/265550/ac426042dfbb835c81e8891089dc4f86b355a4fa.jpg",
+  // },
 ];
 
 const playlistsDestaques = [
