@@ -9,6 +9,9 @@ const playlists = {
       thumbnail:
         "https://www.zastavki.com/pictures/1280x720/2008/Games_far_cry_007167_26.jpg",
       description: "Uma aventura emocionante em uma ilha tropical.",
+      gameStatus: "Completo",
+      releaseDate: "??",
+      year: "2004",
     },
   ],
 
@@ -19,20 +22,31 @@ const playlists = {
       thumbnail:
         "https://i.ytimg.com/vi/x0tguNWiuu4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDCfhJgmVp6ApBFGKZ2B6s1dU7Kxg",
       description: "Reviva a Revolução Americana com gráficos remasterizados.",
+      gameStatus: "Completo",
+      releaseDate: "??",
+      year: "2012",
     },
+
     {
       id: "Assassin's Creed Valhalla",
       name: "Assassin's Creed Valhalla",
       thumbnail:
         "https://wallpapers.com/images/hd/assassin-s-creed-valhalla-varin-s-axe-k7diwwziiqd0t1uq.jpg",
       description: "Explore a era Viking e conquiste novas terras.",
+      gameStatus: "Em lançamento",
+      releaseDate: "??",
+      year: "2020",
     },
+
     {
       id: "Assassin's Creed Rogue",
       name: "Assassin's Creed Rogue",
       thumbnail:
         "https://c4.wallpaperflare.com/wallpaper/138/449/106/assassins-creed-rogue-wallpaper-preview.jpg",
       description: "Viva a história de um assassino que se torna um templário.",
+      gameStatus: "Em lançamento",
+      releaseDate: "??",
+      year: "2014",
     },
   ],
 
@@ -43,6 +57,9 @@ const playlists = {
       thumbnail:
         "https://www.finalfaqs.com.br/wp-content/uploads/2020/12/Alan-Wake.jpg.webp",
       description: "Um thriller psicológico em uma cidade misteriosa.",
+      gameStatus: "Completo",
+      releaseDate: "??",
+      year: "2010",
     },
   ],
 
